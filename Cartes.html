@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Mes cartes - EBANKING ORION NET</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./carte.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="nav-burger">
+  <bouton id="close">
+    <svg width="24" height="24" class='m-0' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.74298 4.29905L12 10.556L18.257 4.29905C18.6195 3.93657 19.1867 3.90361 19.5864 4.20019L19.701 4.29905C20.0997 4.69778 20.0997 5.34425 19.701 5.74298L13.444 12L19.701 18.257C20.0997 18.6558 20.0997 19.3022 19.701 19.701C19.3022 20.0997 18.6558 20.0997 18.257 19.701L12 13.444L5.74298 19.701C5.38049 20.0634 4.81327 20.0964 4.41356 19.7998L4.29905 19.701C3.90032 19.3022 3.90032 18.6558 4.29905 18.257L10.556 12L4.29905 5.74298C3.90032 5.34425 3.90032 4.69778 4.29905 4.29905C4.69778 3.90032 5.34425 3.90032 5.74298 4.29905Z" fill="#ffffff"/>
+    </svg>
+  </bouton>
+  <ul>
+    <center><img src="https://orionfcu.com/wp-content/uploads/2018/08/Full-Color-2018.png" width="200"></center>
+    <li>
+      <a href="Session.php">Synthèses</a>
+    </li>
+    <li>
+      <a href="Operations.html" >Mes Opérations</a>
+    </li>
+    <li>
+      <a href="RIB.html">RIB</a>
+    </li>
+    <span></span>
+    <li>
+      <a href="virement.html">Virement</a>
+    </li>
+    <li>
+      <a href="Cartes.html" class="active" >Cartes</a>
+    </li>
+    <span></span>
+    <li>
+      <a href="#">Souscrire en ligne</a>
+    </li>
+    <span></span>
+    <li>
+      <a href="#">Immobilier</a>
+    </li>
+    <li>
+      <a href="#">Bourse</a>
+    </li>
+    <li>
+      <a href="#">Patrimoine</a>
+    </li>
+  </ul>
+  <a href="index.php" class='mt-auto cta cta-primary dark mb-32'>Fermer la session</a>
+</nav>
+<span id="overlay-nav"></span>
+<header>
+  <nav id="nav-desktop">
+    <img src="https://orionfcu.com/wp-content/uploads/2018/08/Full-Color-2018.png" width="200">
+    <span class="divider-nav"></span>
+
+    <ul>
+      <li><a href="Session.php">Synthèses</a></li>
+      <li><a href="#">Rendez-vous</a></li>
+      <li><a href="Operations.html">Mes Opérations</a></li>
+      <li class="divider-nav"><a href="Cartes.html" class="notif">Cartes</a></li>
+      <li>
+        <a href="#" class="dropdown">Michel MARRON <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.22648 7.74597C5.54749 7.41801 6.08317 7.41801 6.40418 7.74597L10 11.4196L13.5958 7.74597C13.9168 7.41801 14.4525 7.41801 14.7735 7.74597C15.0755 8.05447 15.0755 8.54096 14.7735 8.84947L10.6254 13.0874C10.456 13.2605 10.226 13.3424 10 13.3325C9.77395 13.3424 9.54404 13.2605 9.37457 13.0874L5.22648 8.84947C4.92451 8.54096 4.92451 8.05447 5.22648 7.74597Z" fill="white"/>
+</svg>
+</a>
+      </li>
+      <li>
+        <a href="index.php"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9836 12.984V3H11.0156V12.984H12.9836ZM20.136 8.18404C19.56 7.00004 18.784 5.99205 17.808 5.16004L16.416 6.60004C17.216 7.24004 17.844 8.02804 18.3 8.96404C18.756 9.90005 18.984 10.912 18.984 12C18.984 13.28 18.672 14.456 18.048 15.528C17.424 16.584 16.584 17.424 15.528 18.048C14.456 18.672 13.28 18.984 12 18.984C10.72 18.984 9.54401 18.672 8.472 18.048C7.41599 17.424 6.576 16.584 5.952 15.528C5.328 14.456 5.016 13.28 5.016 12C5.016 10.928 5.256 9.90405 5.736 8.92804C6.184 8.00004 6.8 7.20804 7.584 6.55204L6.192 5.16004C5.216 5.99205 4.448 7.00004 3.888 8.18404C3.296 9.40005 3 10.672 3 12C3 13.632 3.408 15.144 4.224 16.536C5.024 17.896 6.10399 18.976 7.464 19.776C8.85601 20.592 10.368 21 12 21C13.632 21 15.144 20.592 16.536 19.776C17.896 18.976 18.976 17.896 19.776 16.536C20.592 15.144 21 13.632 21 12C21 10.672 20.712 9.40005 20.136 8.18404Z" fill="white"/>
+</svg>
+</a>
+      </li>
+    </ul>
+  </nav>
+  <nav id="nav-mobile">
+    <button id="burger-menu"><svg width="24" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.37109 5H22.3711V7H2.37109V5ZM2.37109 11H22.3711V13H2.37109V11ZM22.3711 17H2.37109V19H22.3711V17Z" fill="white"/>
+</svg> Menu
+</button>
+    <ul>
+      <img src="https://orionfcu.com/wp-content/uploads/2018/08/Full-Color-2018.png" width="150">
+      <li>
+        <a href="index.php"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12.9836 12.984V3H11.0156V12.984H12.9836ZM20.136 8.18404C19.56 7.00004 18.784 5.99205 17.808 5.16004L16.416 6.60004C17.216 7.24004 17.844 8.02804 18.3 8.96404C18.756 9.90005 18.984 10.912 18.984 12C18.984 13.28 18.672 14.456 18.048 15.528C17.424 16.584 16.584 17.424 15.528 18.048C14.456 18.672 13.28 18.984 12 18.984C10.72 18.984 9.54401 18.672 8.472 18.048C7.41599 17.424 6.576 16.584 5.952 15.528C5.328 14.456 5.016 13.28 5.016 12C5.016 10.928 5.256 9.90405 5.736 8.92804C6.184 8.00004 6.8 7.20804 7.584 6.55204L6.192 5.16004C5.216 5.99205 4.448 7.00004 3.888 8.18404C3.296 9.40005 3 10.672 3 12C3 13.632 3.408 15.144 4.224 16.536C5.024 17.896 6.10399 18.976 7.464 19.776C8.85601 20.592 10.368 21 12 21C13.632 21 15.144 20.592 16.536 19.776C17.896 18.976 18.976 17.896 19.776 16.536C20.592 15.144 21 13.632 21 12C21 10.672 20.712 9.40005 20.136 8.18404Z" fill="white"/>
+</svg>
+</a>
+      </li>
+    </ul>
+  </nav>
+  <div id="header">
+    <div id="breadcrumb" class='body2'>
+      <p>Accueil</p>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.19678 11.8188C5.93441 11.562 5.93441 11.1335 6.19678 10.8767L9.13571 8L6.19678 5.12334C5.93441 4.86653 5.93441 4.43799 6.19678 4.18118C6.44358 3.93961 6.83277 3.93961 7.07957 4.18118L10.4699 7.49966C10.6084 7.63523 10.6739 7.81916 10.666 8C10.6739 8.18084 10.6084 8.36477 10.4699 8.50034L7.07957 11.8188C6.83277 12.0604 6.44358 12.0604 6.19678 11.8188Z" fill="white"/>
+</svg>
+    <p class='active bold'>Détail des comptes</p>
+    </div>
+    <div id='container-synthese-header'>
+    <div class='synthese-header'>
+      <img src="https://nicolasvigneau.fr/ornement1.svg" id='ornement1' alt="">
+      <img src="https://nicolasvigneau.fr/ornement2.svg" id='ornement2' alt="">
+      <img src="https://nicolasvigneau.fr/ornement3.svg" id='ornement3' alt="">
+      <div id='compte-header' class="mr-24 mr-0-m">
+        <button class='bold mb-16'>
+          <p class="m-0 body2">VISA CLASSIC</p>
+        </button>
+        <p class="mt-4 mb-0 body2 medium">N° 4533 **** **** 6303</p>
+        <h4>Plafond de paiement:  </h4>
+        <p class="mt-4 mb-0 body2 medium">2 000 € dont 1 200 € maximum à l'international</p>
+        <p style="font-size: 17px;" class='h1 mb-0 mt-0'>Expiration : 05/2025</p>
+      </div>
+      
+    </div>
+
+    <p class='maj caption'>  <script type="text/javascript">
+var ladate=new Date()
+document.write(" Dernière connexion: "); 
+document.write(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear())``
+</script></p>
+  </div>
+  </div>
+</header>
+<!-- partial:index.partial.html -->
+
+
+    <div class="light-back"></div> 
+
+  <div class="section-fluid-main">
+    <div class="section-row">
+      <div class="section-col-2">
+        <div class="section">
+          <p class="color-blue">Dépenses effectuer</p>
+          <h3><span class="font-weight-500">€</span> 109.00 </h3>
+        </div>
+      </div>
+      <div class="section-col-2">
+        <div class="section">
+          <p class="color-yellow">Limite autoriser</p>
+          <h3><span class="font-weight-500">€</span> 7 500.00 </h3>
+        </div>
+      </div>
+        <input class="date-btn" type="radio" id="date-1" name="date-btn" checked/>
+        <label for="date-1"><span>2017</span></label> 
+        <input class="date-btn" type="radio" id="date-2" name="date-btn"/>
+        <label for="date-2"><span>2018</span></label> 
+        <input class="date-btn" type="radio" id="date-3" name="date-btn"/>
+        <label for="date-3"><span>2019</span></label> 
+        <input class="date-btn" type="radio" id="date-4" name="date-btn"/>
+        <label for="date-4"><span>2020</span></label> 
+      <div class="section-col-1">
+        <div class="section">
+          <div class="section-progress">
+            <div class="income days-30">
+              <div class="income-tooltip">
+                <p>Moyenne</p>
+                <h6 class="test">760.00 €</h6>
+              </div>
+            </div>
+            <div class="expense days-30">
+              <div class="expense-tooltip">
+                <p>Expense</p>
+                <h6 class="test">1 800.00 €</h6>
+              </div>
+            </div>
+            <div class="income days-90">
+              <div class="income-tooltip">
+                <p>Moyenne</p>
+                <h6 class="test">400.00 €</h6>
+              </div>
+            </div>
+            <div class="expense days-90">
+              <div class="expense-tooltip">
+                <p>Expense</p>
+                <h6 class="test"> 700.00 €</h6>
+              </div>
+            </div>
+            <div class="income days-180">
+              <div class="income-tooltip">
+                <p>Moyenne</p>
+                <h6 class="test">352.96 €</h6>
+              </div>
+            </div>
+            <div class="expense days-180">
+              <div class="expense-tooltip">
+                <p>Expense</p>
+                <h6 class="test">784.32 €</h6>
+              </div>
+            </div>
+            <div class="income days-365">
+              <div class="income-tooltip">
+                <p>Moyenne</p>
+                <h6 class="test">871.78 €</h6>
+              </div>
+            </div>
+            <div class="expense days-365">
+              <div class="expense-tooltip">
+                <p>Expense</p>
+                <h6 class="test"> 283.47 €</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+<!-- partial -->
+<main class="container mt-40">
+  <section class="htt">
+  <h5 class="mt-40">MES DERNIER PAIEMENTS</h5>
+  <details>
+    <summary>
+      <div>
+        <span style="background-color: #f2dcbb;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <path d="M192,120h27.05573a8,8,0,0,0,7.15542-4.42229l18.40439-36.80878a8,8,0,0,0-3.18631-10.52366L192,40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+            <path d="M64,120H36.94427a8,8,0,0,1-7.15542-4.42229L11.38446,78.76893a8,8,0,0,1,3.18631-10.52366L64,40" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+            <path d="M160,40a32,32,0,0,1-64,0H64V208a8,8,0,0,0,8,8H184a8,8,0,0,0,8-8V40Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+          </svg>
+        </span>
+        <h3>
+          <strong>TRANSACTION CB</strong>
+          <small>Nathalie store</small>
+        </h3>
+        <span>-45.99 €</span>
+      </div>
+    </summary>
+    <div>
+      <dl>
+        <div>
+          <dt>Heure</dt>
+          <dd>13:16</dd>
+        </div>
+
+        <div>
+          <dt>Card used</dt>
+          <dd>•••• 6890</dd>
+        </div>
+
+        <div>
+          <dt>Reference ID</dt>
+          <dd>3125-568911</dd>
+        </div>
+      </dl>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <div>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M96 128C96.53 128 97.07 128 97.6 128C105 91.49 137.3 64 176 64C190.1 64 204.1 68.1 216.9 75.25C230.2 49.55 257.1 32 288 32C318.9 32 345.8 49.56 359.1 75.25C371 68.1 385 64 400 64C438.7 64 470.1 91.49 478.4 128C478.9 128 479.5 128 480 128C515.3 128 544 156.7 544 192C544 203.7 540.9 214.6 535.4 224H40.56C35.12 214.6 32 203.7 32 192C32 156.7 60.65 128 96 128H96zM16 283.4C16 268.3 28.28 256 43.43 256H532.6C547.7 256 560 268.3 560 283.4C560 356.3 512.6 418.2 446.9 439.8C447.6 442.4 448 445.2 448 448C448 465.7 433.7 480 416 480H160C142.3 480 128 465.7 128 448C128 445.2 128.4 442.4 129.1 439.8C63.4 418.2 16 356.3 16 283.4H16z"/></svg>
+        </span>
+        <h3>
+          <strong></strong>
+          <small>PAIEMENT MACDO</small>
+        </h3>
+        <span class="plus">- 10.00 €</span>
+      </div>
+    </summary>
+    <div>
+      <dl>
+        <div>
+          <dt>Heure</dt>
+          <dd>16.14am</dd>
+        </div>
+
+        <div>
+          <dt>Reference ID</dt>
+          <dd>3125-568912</dd>
+        </div>
+      </dl>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <div>
+        <span style="background-color: #e0ece4;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+            <rect width="256" height="256" fill="none"></rect>
+            <line x1="88" y1="24" x2="88" y2="56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <line x1="120" y1="24" x2="120" y2="56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <line x1="152" y1="24" x2="152" y2="56" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <line x1="32" y1="216" x2="208" y2="216" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+            <path d="M83.29651,216.0038A88.01441,88.01441,0,0,1,32,136V88H208v48a88.0144,88.0144,0,0,1-51.29712,80.00408" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+            <path d="M208,88h0a32,32,0,0,1,32,32V128a32,32,0,0,1-32,32h-3.37846" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+          </svg>
+        </span>
+        <h3>
+          <strong>TRANSACTION CB</strong>
+          <small>Salon de thé l'Océan</small>
+        </h3>
+        <span>-14.99 €</span>
+      </div>
+    </summary>
+    <div>
+      <dl>
+        <div>
+          <dt>HEURE</dt>
+          <dd>7:49</dd>
+        </div>
+
+        <div>
+          <dt>Card used</dt>
+          <dd>•••• 6890</dd>
+        </div>
+
+        <div>
+          <dt>Reference ID</dt>
+          <dd>3125-568913</dd>
+        </div>
+      </dl>
+    </div>
+  </details>
+  <details>
+    <summary>
+      <div>
+        <span>
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle><g><path d="M179.1333,108.32931a112.19069,112.19069,0,0,0-102.3584.04859" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M164.29541,136.71457a79.94058,79.94058,0,0,0-72.68359.04736" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path><path d="M149.47217,165.07248a47.97816,47.97816,0,0,0-43.03662.04736" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></g></svg>
+        </span>
+        <h3>
+          <strong>TRANSACTION CB</strong>
+          <small>Metflix</small>
+        </h3>
+        <span>-9.99 €</span>
+      </div>
+    </summary>
+    <div>
+      <dl>
+        <div>
+          <dt>Heure</dt>
+          <dd>19:00</dd>
+        </div>
+
+        <div>
+          <dt>Card used</dt>
+          <dd>•••• 6890</dd>
+        </div>
+
+        <div>
+          <dt>Reference ID</dt>
+          <dd>3125-568915</dd>
+        </div>
+      </dl>
+    </div>
+  </details>
+</section>
+<!-- partial -->
+
+
+
+
+  
+   <div class="fast-track">
+      <svg class="illu-fast-track" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="12" y="8" width="26" height="37" fill="#FFA702"/>
+<rect x="10" y="6" width="26" height="37" fill="#E0E6FF"/>
+<rect x="15" y="12.0001" width="16" height="3" fill="#1F368B"/>
+<rect x="18" y="17.0004" width="10" height="3" fill="#ADBEFF"/>
+<rect x="15.7363" y="32" width="30.2629" height="14" rx="3" fill="#1F368B"/>
+<path d="M19.7363 36.2H21.0323V40.744H23.8403V41.8H19.7363V36.2Z" fill="white"/>
+<path d="M24.5645 36.2H27.1085C27.7165 36.2 28.2525 36.3173 28.7165 36.552C29.1858 36.7813 29.5485 37.1067 29.8045 37.528C30.0658 37.9493 30.1965 38.44 30.1965 39C30.1965 39.56 30.0658 40.0507 29.8045 40.472C29.5485 40.8933 29.1858 41.2213 28.7165 41.456C28.2525 41.6853 27.7165 41.8 27.1085 41.8H24.5645V36.2ZM27.0445 40.736C27.6045 40.736 28.0498 40.5813 28.3805 40.272C28.7165 39.9573 28.8845 39.5333 28.8845 39C28.8845 38.4667 28.7165 38.0453 28.3805 37.736C28.0498 37.4213 27.6045 37.264 27.0445 37.264H25.8605V40.736H27.0445Z" fill="white"/>
+<path d="M31.1738 36.2H33.7178C34.3258 36.2 34.8618 36.3173 35.3258 36.552C35.7952 36.7813 36.1578 37.1067 36.4138 37.528C36.6752 37.9493 36.8058 38.44 36.8058 39C36.8058 39.56 36.6752 40.0507 36.4138 40.472C36.1578 40.8933 35.7952 41.2213 35.3258 41.456C34.8618 41.6853 34.3258 41.8 33.7178 41.8H31.1738V36.2ZM33.6538 40.736C34.2138 40.736 34.6592 40.5813 34.9898 40.272C35.3258 39.9573 35.4938 39.5333 35.4938 39C35.4938 38.4667 35.3258 38.0453 34.9898 37.736C34.6592 37.4213 34.2138 37.264 33.6538 37.264H32.4698V40.736H33.6538Z" fill="white"/>
+<path d="M39.6232 41.896C39.1805 41.896 38.7512 41.8373 38.3352 41.72C37.9245 41.5973 37.5939 41.44 37.3432 41.248L37.7832 40.272C38.0232 40.448 38.3085 40.5893 38.6392 40.696C38.9699 40.8027 39.3005 40.856 39.6312 40.856C39.9992 40.856 40.2712 40.8027 40.4472 40.696C40.6232 40.584 40.7112 40.4373 40.7112 40.256C40.7112 40.1227 40.6579 40.0133 40.5512 39.928C40.4499 39.8373 40.3165 39.7653 40.1512 39.712C39.9912 39.6587 39.7725 39.6 39.4952 39.536C39.0685 39.4347 38.7192 39.3333 38.4472 39.232C38.1752 39.1307 37.9405 38.968 37.7432 38.744C37.5512 38.52 37.4552 38.2213 37.4552 37.848C37.4552 37.5227 37.5432 37.2293 37.7192 36.968C37.8952 36.7013 38.1592 36.4907 38.5112 36.336C38.8685 36.1813 39.3032 36.104 39.8152 36.104C40.1725 36.104 40.5219 36.1467 40.8632 36.232C41.2045 36.3173 41.5032 36.44 41.7592 36.6L41.3592 37.584C40.8419 37.2907 40.3245 37.144 39.8072 37.144C39.4445 37.144 39.1752 37.2027 38.9992 37.32C38.8285 37.4373 38.7432 37.592 38.7432 37.784C38.7432 37.976 38.8419 38.12 39.0392 38.216C39.2419 38.3067 39.5485 38.3973 39.9592 38.488C40.3859 38.5893 40.7352 38.6907 41.0072 38.792C41.2792 38.8933 41.5112 39.0533 41.7032 39.272C41.9005 39.4907 41.9992 39.7867 41.9992 40.16C41.9992 40.48 41.9085 40.7733 41.7272 41.04C41.5512 41.3013 41.2845 41.5093 40.9272 41.664C40.5699 41.8187 40.1352 41.896 39.6232 41.896Z" fill="white"/>
+</svg>
+      <div class="mr-auto">
+        <h4>Livret de Développement Durable et Solidaire (LDDS)</h4>
+        <p class="body2 grey-700 m-0">Pour participer au développement de l'économie sociale et solidaire</p>
+      </div>
+      <a href="#" class="link-icon">Souscrire <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.27586 10.8824L14.8621 10.8824L12.5603 13.5C12.25 13.8529 12.25 14.4118 12.5603 14.7353C12.8707 15.0882 13.3621 15.0882 13.6466 14.7353L17.2672 10.6176C17.5776 10.2647 17.5776 9.70588 17.2672 9.38235L13.6466 5.26471C13.4914 5.08823 13.2845 5 13.1034 5C12.9224 5 12.7155 5.08823 12.5603 5.26471C12.25 5.61765 12.25 6.17647 12.5603 6.5L14.8621 9.11765L3.27586 9.11765C2.83621 9.11765 2.5 9.5 2.5 10C2.5 10.5 2.83621 10.8824 3.27586 10.8824Z" fill="#3B51D5"/>
+</svg>
+</a>
+    </div>
+  </div>
+  <div class="fast-track">
+      <svg class="illu-fast-track" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6107_8738)">
+<path d="M36.1295 40L38.1996 43.6178L30.6698 48L28.5996 44.3822L36.1295 40Z" fill="#ADBEFF"/>
+<path d="M1 6.62125L5.95402 4L6 9L1 6.62125Z" fill="#ADBEFF"/>
+<path d="M38 1.5L36.4952 3L35 1.5L36.4952 0L38 1.5Z" fill="#1F368B"/>
+<path d="M31.5011 5.6144C31.1565 5.80801 30.7767 5.93189 30.3837 5.9789C29.9908 6.02591 29.5923 5.99514 29.2113 5.88835C28.8304 5.78155 28.4744 5.60085 28.1638 5.35663C27.8533 5.11241 27.5943 4.8095 27.4019 4.46533C27.0042 3.77953 26.8964 2.96468 27.1021 2.19981C27.3077 1.43494 27.8101 0.782596 28.4989 0.386102C28.8436 0.192493 29.2233 0.068618 29.6163 0.021604C30.0093 -0.0254101 30.4077 0.00536499 30.7887 0.112158C31.1697 0.218952 31.5257 0.399656 31.8362 0.643874C32.1467 0.888092 32.4057 1.191 32.5981 1.53518C32.9958 2.22098 33.1036 3.03582 32.898 3.8007C32.6923 4.56557 32.1899 5.21791 31.5011 5.6144Z" fill="#FFA702"/>
+<path d="M7.00002 38V44H1V38H7.00002Z" fill="#FFA702"/>
+<path d="M47 14.197L44.8022 18.0003L41 15.8035L43.1978 12.0002L47 14.197Z" fill="#ADBEFF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27 21C27 22.6569 25.6569 24 24 24C22.3431 24 21 22.6569 21 21C21 19.3431 22.3431 18 24 18C25.6569 18 27 19.3431 27 21ZM19 30C19 27.2386 21.2386 25 24 25C26.7614 25 29 27.2386 29 30H19Z" fill="#1F368B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M24 34C29.5228 34 34 29.5228 34 24C34 18.4772 29.5228 14 24 14C18.4772 14 14 18.4772 14 24C14 29.5228 18.4772 34 24 34ZM24 41C33.3888 41 41 33.3888 41 24C41 14.6112 33.3888 7 24 7C14.6112 7 7 14.6112 7 24C7 33.3888 14.6112 41 24 41Z" fill="#E0E6FF"/>
+</g>
+<defs>
+<clipPath id="clip0_6107_8738">
+<rect width="48" height="48" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+      <div class="mr-auto">
+        <h4>sparkasse bank Vie</h4>
+        <p class="body2 grey-700 m-0">Accessible avec un versement initial de 50 euros</p>
+      </div>
+      <a href="#" class="link-icon">Souscrire <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M3.27586 10.8824L14.8621 10.8824L12.5603 13.5C12.25 13.8529 12.25 14.4118 12.5603 14.7353C12.8707 15.0882 13.3621 15.0882 13.6466 14.7353L17.2672 10.6176C17.5776 10.2647 17.5776 9.70588 17.2672 9.38235L13.6466 5.26471C13.4914 5.08823 13.2845 5 13.1034 5C12.9224 5 12.7155 5.08823 12.5603 5.26471C12.25 5.61765 12.25 6.17647 12.5603 6.5L14.8621 9.11765L3.27586 9.11765C2.83621 9.11765 2.5 9.5 2.5 10C2.5 10.5 2.83621 10.8824 3.27586 10.8824Z" fill="#3B51D5"/>
+</svg>
+</a>
+    </div>
+</main>
+<div id="sticky">
+  <div id="sticky-buttons">
+    <a href="virement.html" class="cta cta-primary sticky"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.59434 5.43036L13.793 5.43036C14.1421 5.43036 14.409 5.70246 14.409 6.05829C14.409 6.41412 14.1421 6.68623 13.793 6.68623L4.59434 6.68623L6.42176 8.5491C6.66815 8.77934 6.66815 9.17703 6.42176 9.42821C6.29856 9.55379 6.1343 9.61659 5.99057 9.61659C5.84684 9.61659 5.68258 9.55379 5.55938 9.42821L2.68479 6.49785C2.4384 6.2676 2.4384 5.86991 2.6848 5.61874L5.55938 2.68838C5.78524 2.43721 6.17537 2.43721 6.42176 2.68838C6.66815 2.91862 6.66815 3.31631 6.42176 3.56749L4.59434 5.43036ZM15.4057 14.5697H6.20697C5.85792 14.5697 5.59099 14.2976 5.59099 13.9417C5.59099 13.5859 5.85792 13.3138 6.20697 13.3138H15.4057L13.5782 11.4509C13.3318 11.2207 13.3318 10.823 13.5782 10.5718C13.7014 10.4462 13.8657 10.3834 14.0094 10.3834C14.1532 10.3834 14.3174 10.4462 14.4406 10.5718L17.3152 13.5022C17.5616 13.7324 17.5616 14.1301 17.3152 14.3813L14.4406 17.3116C14.2148 17.5628 13.8246 17.5628 13.5782 17.3116C13.3318 17.0814 13.3318 16.6837 13.5782 16.4325L15.4057 14.5697Z" fill="white"/>
+</svg>
+Virement</a>
+    <a href="RIB.html" class="cta cta-primary sticky"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M2.66602 3.33325C2.11373 3.33325 1.66602 3.78097 1.66602 4.33325V15.2962C1.66602 15.8485 2.11373 16.2962 2.66602 16.2962H17.3327C17.885 16.2962 18.3327 15.8485 18.3327 15.2962V4.33325C18.3327 3.78097 17.885 3.33325 17.3327 3.33325H2.66602ZM7.22176 9.81454H3.51806V11.6664H7.22176V9.81454ZM16.481 12.5923H3.51806V14.4442H16.481V12.5923ZM8.14769 9.81454H11.8514V11.6664H8.14769V9.81454ZM16.481 9.81454H12.7773V11.6664H16.481V9.81454Z" fill="white"/>
+</svg>
+RIB</a>
+    
+  </div>
+  
+</div>
+
+<footer>
+  <div id="footer-main">
+  <div class="container">
+<img src="https://play-lh.googleusercontent.com/LbexloJX6mMFPV2EhbjTXghl-cUthUQfOIxDPE1uYiEeuOmIYy2q47ZJ0vGut9ySqf7e" width="100">
+    <ul class="mt-0 mx-60">
+      <li><p class="bold">Informations légales</p></li>
+      <li><a href="#">Conditions générales</a></li>
+      <li><a href="#">Disposition générales de banque</a></li>
+      <li><a href="#">Protection des données</a></li>
+    </ul>
+    <ul class="mt-0">
+      <li><p class="bold">Aide et accessibilité</p></li>
+      <li><a href="#">Nous contacter & urgences</a></li>
+      <li><a href="#"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_5932_8592)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.4573 3.07019C10.4269 2.21134 9.05262 1.81504 7.67838 1.94696C5.54814 2.27757 3.83062 3.92904 3.55566 5.91111L4.9299 6.10927C5.13598 4.65596 6.37246 3.4665 7.88446 3.26834C8.91486 3.13642 9.87694 3.40027 10.6329 4.06096C11.3201 4.72165 11.7322 5.64673 11.7322 6.57181C11.7322 7.56257 11.3201 8.48765 10.4952 9.08265C9.67086 9.74334 9.1215 10.7341 8.91486 11.7911C8.84654 12.1874 8.64046 12.518 8.29662 12.7824C8.02166 13.1125 7.54062 13.1787 7.12846 13.1787C6.64742 13.1125 6.23526 12.9143 5.96086 12.5837L4.86102 13.4431C5.41094 14.0376 6.09806 14.4339 6.92238 14.5001H7.19734C7.88446 14.5001 8.57158 14.2357 9.18982 13.8394C9.73974 13.3769 10.1519 12.7824 10.2897 12.0555C10.4269 11.2623 10.839 10.536 11.3884 10.0734C12.4882 9.21457 13.1065 7.95942 13.1065 6.57181C13.1065 5.25042 12.4882 3.99527 11.4573 3.07019Z" fill="#E0E0E0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.2203 8.42161C10.7702 7.95907 11.0452 7.29838 11.0452 6.57145C11.0452 5.84507 10.7702 5.18438 10.2203 4.72184C9.18992 3.73107 7.40352 3.73107 6.37256 4.72184L7.33464 5.64691C7.88456 5.11814 8.70888 5.11814 9.25824 5.64691C9.5332 5.91076 9.67096 6.24138 9.67096 6.57145C9.67096 6.90207 9.5332 7.23268 9.25824 7.49653L10.2203 8.42161Z" fill="#E0E0E0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.200684 13.4724L6.56564 7.35229L7.53724 8.28653L1.17228 14.4067L0.200684 13.4724Z" fill="#E0E0E0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.5898 2.04962L14.8473 0.974854L15.9404 1.90908L14.6829 2.98385L13.5898 2.04962Z" fill="#E0E0E0"/>
+</g>
+<defs>
+<clipPath id="clip0_5932_8592">
+<rect width="15.75" height="15" fill="white" transform="translate(0.200684 0.5)"/>
+</clipPath>
+</defs>
+</svg>
+Accès malentendants et sourds</a></li>
+      <li><a href="#">Foire aux questions</a></li>
+    </ul>
+  </div>
+  </div>
+  <div id="footer-secondary">
+    <ul class="m-0">
+      <li>
+        <a href="#">Mentions légales</a>
+      </li>
+      <li>
+        <a href="#">Politique des cookies et de protection des données</a>
+      </li>
+      <li>
+        <a href="#">Tarifs</a>
+      </li>
+      <li>
+        <a href="#">Sécurité</a>
+      </li>
+      <li>
+        <a href="#">© sparkasse bank</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
