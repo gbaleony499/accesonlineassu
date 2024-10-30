@@ -1,0 +1,693 @@
+<?php
+   session_start();
+   if($_SESSION["autoriser"]!="oui"){
+      header("location:index.php");
+      exit();
+   }
+   if(date("H")<18)
+      $bienvenue="Bonjour ";
+   else
+      $bienvenue="Bonsoir ";
+?>
+<!DOCTYPE html>
+
+<!--if IE 8html.ie8(lang="en")
+-->
+<!--if IE 9html.ie9(lang="en")
+-->
+<!-- [if !IE] <!-->
+<html lang="en">
+<!-- <![endif]-->
+<!--head de la page-->
+
+ <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+<!-- appel de la fancybox -->
+
+  <style>
+
+    .overlay {
+
+      position: absolute;
+
+      z-index: 99;
+
+      top: 0; left: 0; bottom: 0; right: 0;
+
+      background-color: rgba(0, 0, 0, 0.5);
+
+      display: none;
+
+    }
+
+    .popup {
+
+      background-color: #fff;
+
+      width: 400px;
+
+      height: 300px;
+
+      position: absolute;
+
+      left: calc(50% - 200px);
+
+      top: calc(50% - 150px);
+
+      z-index: 999;
+
+      border-radius: 5px;
+
+      box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+
+      box-sizing: border-box;
+
+      border: thin solid #ccc;
+
+      padding: 1rem;
+
+      display: none;
+
+    }
+
+    .popup .popup-title { font-size: 2em }
+
+    .popup .popup-close {
+
+      color: #f00;
+
+      text-decoration: none;
+
+      font-size: 1.6em;
+
+      position: absolute;
+
+      top: 0.1em;
+
+      right: 0.1em;
+
+      line-height: 1em;
+
+      text-shadow: 0 3px 3px #ccc;
+
+    }
+
+  </style>
+
+
+
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="author" content="BforBank" />
+    <meta name="description" content="Gérez vos comptes BforBank en ligne : compte bancaire, assurance-vie, livrets, bourse" />
+    <meta name="format-detection" content="telephone=no" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,IE=8,chrome=1"/>
+    <![endif]-->
+
+    <!-- Title -->
+<title>Synthèse : SOCIÉTÉ GÉNÉRALE | PARTICULIERS</title>
+
+    <!-- Style sheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,600,700,200,100,800" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+    <link rel="icon" th:href="${application.staticRoot + '/img/favicon.ico'}"/>
+    <![endif]-->
+    <!--[if (gte IE 9) | (!IE)]><!-->
+   <link rel="icon" href="https://fernelmont.ecolo.be/wp-content/uploads/sites/67/2018/02/Belfius-logo-2012-stacked.png" />
+    <!--<![endif]-->
+    <link rel="stylesheet" href="https://static.bforbank.com/css/ec-third-party.min.css" />
+    <link rel="stylesheet" href="https://static.bforbank.com/css/ec-style.min.css" />
+    <link rel="stylesheet" type="text/css" media="print" href="https://static.bforbank.com/css/ec-print.min.css" />
+
+    <style>
+        body {
+            background-image: url(https://www.bforbank.com//files/live/sites/Bforbank/files/contributed/produits/espace-client/background.jpg);
+        }
+    </style>
+</head>
+
+
+
+<div class="overlay"></div>
+
+<div class="popup">
+
+  <center><img class="popup-title" src="https://www.societegenerale.com/sites/default/files/styles/rte_affichage_defaut_desktop/public/image/2023-04/logo-societe-generale.png?itok=9tsodGw3" width="100"></center><br>
+
+  <center><p class="popup-text">Votre compte est temporairement bloqué veuillez vous rapprocher auprès de votre gestionnaire pour regler frais de déblocage qui s'élève à <br> <strong style="color: green;">20 000 €</strong></p></center>
+    <center><img src="https://i.ytimg.com/vi/43Ki7hi_SVE/maxresdefault.jpg" width="200"></center>
+
+  <a href="#" class="popup-close" title="Fermer la popup">✖</a>
+
+</div>
+
+<!-- Commencez à coder ici (n'oubliez pas d'inclure la bibliothèque jQuery dans la page) -->
+
+<script>
+
+  function  PopUp() {
+
+      $('.popup').fadeIn();
+
+      $('.overlay').fadeIn();
+
+    }
+
+    function cliquerSurCroix () {
+
+        $('.popup').fadeOut();
+
+        $('.overlay').fadeOut();
+
+    }
+
+$('input').on('click',  PopUp());
+
+$('.popup-close').on('click', cliquerSurCroix);
+
+</script>
+
+<body class="layout-boxed ec-layout">
+<div class="nav-left-container">
+    <!-- Colonne de gauche -->
+    <div class="nav-left">
+        <nav class="navbar-content">
+    <div class="navbar-content">
+        <!-- start: SIDEBAR-->
+        <div class="main-navigation left-wrapper transition-left">
+            <!-- start: MAIN NAVIGATION MENU-->
+            <ul class="main-navigation-menu">
+                <li class="active open">
+                    <a href="session.html">
+                        <i class="fa fa-calculator"></i><span class="title">MES COMPTES</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="active">
+                            <a class="send-tc-submit" data-tc-name="navigation::menu::synthese|navigation menu||mon espace|synthese" href="session.php"><span>Synthèse</span></a></li>
+                        <li>
+                            
+                            <a href="javascript:void(0)" class="comptes send-tc-submit" data-tc-name="navigation::menu::dav|navigation menu||mon espace|dav">
+                                <span>Compte et cartes</span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a class="follow" href="Opérations">
+                                        <span class="num-compte">Compte n° 12690385509005</span>
+                                        <br />
+                                        <span>
+                                            <span>M.</span>
+                                            <span>SOFIA ROSSO</span>
+                                        </span>
+                                        
+
+                                    </a>
+
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
+                        
+                </li>
+
+
+                
+
+                <!--Menu Services avec ces sous menus : - Mobilité Bancaire &  - Autres services-->
+                <li>
+                    <a class="send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::changer banque|navigation menu||mon espace|changer banque" href="">
+                        <i class="fa fa-cogs"></i>
+                        <span class="title">SERVICES</span>
+                    </a>
+
+                    <ul class="sub-menu">
+                        <!-- sous menu : Mobilité Bancaire -->
+                        <li>
+                            <a class="follow send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::changer banque|navigation menu||mon espace|changer banque" href="">
+                                <span class=""> Mobilité Bancaire</span>
+                            </a>
+                        </li>
+                        <!-- sous menu : Autres services -->
+                        <li>
+                            <a class="follow send-tc-submit" data-tc-type="N" data-tc-name="navigation::menu::autres services|navigation menu||mon espace|autres services" href="">
+                                <span class=""> Autres services</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::virements|navigation menu||mon espace|virements" href="Proceder/Virement.html"><i class="fa fa-exchange"></i><span class="title">VIREMENTS</span></a></li>
+
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::rib|navigation menu||mon espace|rib" href="RIB.html"><i class="fa fa-list-alt"></i><span class="title">RIB</span></a></li>
+
+                <li><a class="send-tc-submit" data-tc-name="navigation::menu::docubase|navigation menu||mon espace|docubase" href=""><i class="fa fa-file-text-o"></i><span class="title">MES DOCUMENTS</span></a>
+                </li>
+                <li>
+                    <a class="send-tc-submit" data-tc-name="navigation::menu::offres a saisir|navigation menu||mon espace|offres a saisir" href="">
+                        <i class="fa fa-certificate"></i>
+                        <span class="title">MES OFFRES</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="send-tc-submit" data-tc-name="navigation::menu::mon profil|navigation menu||mon espace|mon profil" href="">
+                        <i class="fa fa-user"></i>
+                        <span class="title">MON PROFIL</span>
+                    </a>
+                </li>
+                
+            </ul>
+            <div class="clearfix"></div>
+            <!-- end: MAIN NAVIGATION MENU-->
+        </div>
+        <!-- end: SIDEBAR-->
+    </div>
+</nav>
+    </div>
+</div>
+<!--Conteneur principal de la page-->
+<div class="main-wrapper">
+    <div class="site-canvas">
+        <!-- Header de la page -->
+        
+    <header class="ec-header navbar">
+        <!-- start: TOPBAR CONTAINER-->
+        <div class="container">
+            <div class="navbar-header">
+                <!-- start: LOGO-->
+                  <a class="navbar-bran" href=""> <img alt="Banque en ligne " src="https://www.societegenerale.com/sites/default/files/styles/rte_affichage_defaut_desktop/public/image/2023-04/logo-societe-generale.png?itok=9tsodGw3" width="200" />
+                </a>
+                <!-- end: LOGO-->
+            </div>
+            <ul class="nav navbar-header-toolbar">
+                <li><a href="#" data-target=".modal-dcnx" data-toggle="modal" data-tc-name="navigation::menu::deconnexion|navigation menu||mon espace|deconnexion" class="send-tc-submit"><i class="fa fa-power-off"></i>DÉCONNEXION</a>
+                    </li>
+                <li><a data-tc-name="navigation::menu::renvoi contact|navigation menu||mon espace|renvoi contact" class="send-tc-submit" href=""><i class="fa fa-envelope"></i>CONTACT</a></li>
+                <li><a data-tc-name="navigation::menu::renvoi opposition|navigation menu||mon espace|" class="send-tc-submit" href=""><i class="fa fa-ban"></i>OPPOSITION</a></li>
+            </ul>
+
+        </div>
+    </header>
+    <header class="ec-header-sm">
+        <a href="#" class="ec-header-sm-menu toggle-nav">☰</a><a class="ec-header-sm-logout" href="index.html"><i class="fa fa-power-off"></i></a>
+        <div class="ec-header-sm-logo">
+             <img alt="Banque en ligne - BNP" src="https://www.societegenerale.com/sites/default/files/styles/rte_affichage_defaut_desktop/public/image/2023-04/logo-societe-generale.png?itok=9tsodGw3"width="50" />
+            </div>
+    </header>
+    
+    <div>
+    <!-- Modale de deconnexion -->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal modal-dcnx fade">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Déconnexion</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Voulez-vous vraiment vous déconnecter ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button aria-hidden="true" data-dismiss="modal" type="button" class="btn btn-light-grey btn-squared pull-left">Annuler</button>
+                    <a type="button" class="btn btn-primary btn-squared" href="index.html">Confirmer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+</div>
+
+
+        <div class="ec-main-container inner">
+            <div class="main-content">
+                <!-- Corps de page -->
+                <div class="page-content">
+
+                    
+
+
+                    <div class="jahia-top hidden-print">
+        
+        <div>
+        
+        <div>
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/auto-promotion/toutes-rubriques.html #autopromo-produits-hors-DAV-haut'></div>
+                
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+    </div>
+                    <div class="jahia-msg hidden-print">
+
+    
+
+    <!-- Corps de page -->
+    
+        
+        
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/messages-client.html #msg-synthese'></div>
+            
+            
+        
+        
+        
+        
+        
+        
+        
+    
+</div>
+                    <div id="pagecontent" class="page">
+    <style>
+.e-comptes-synthese-2 tr:hover td.chart {
+    cursor: initial;
+}
+</style>
+    <div class="tabbable">
+        <div class="tab-content">
+            <div class="tab-pane fade active in">
+                <div class="row e-comptes-synthese-h1">
+                    <div class="col-sm-6">
+                        <h1>Synthèse</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="e-comptes-synthese-h1-name">
+                            <span>Bonjour Mlle, SOFIA ROSSO</span><br />
+
+                            <p class="text-black mt-0 mb-1"><script type="text/javascript">
+var ladate=new Date()
+document.write(" Dernière connexion: "); 
+document.write(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear())``
+</script> 
+
+                            <span style="font-weight:normal;">    </span>
+                        </div>
+                        <!--<div class="e-comptes-synthese-h1-infos"><span th:text="#{synthese.date.derniere.connexion}"></span></div>-->
+                    </div>
+                </div>
+                <div class="margin-top-30 hidden-md hidden-lg hidden-sm"></div>
+                <div class="m-table-title">
+                    <span>Synthèse de votre compte bancaire</span> 
+                    <div class="m-table-title-text-right">
+                       
+                        <span>  <p class="text-black mt-0 mb-1"><script type="text/javascript">
+var ladate=new Date()
+document.write("Solde au : "); 
+document.write(ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear())``
+</script><br><b class="ggd">Statut du compte: <b style="color: red;"> bloqué</b></b></p> </span>
+                    </div>
+                </div>
+                <table class="table e-comptes-synthese-2" style="width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>
+                                <span>Compte</span>
+                                <div class="pull-right">Solde</div>
+                            </th>
+                        </tr>
+                    
+                </thead>
+                    
+                </table>
+                
+
+
+                <div class="clearfix"></div>
+            </span>
+                    <div class="m-more-card">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <div class="m-more-card-img"><i class="fa fa-credit-card"></i></div>
+                            </div>
+                            <div class="col-sm-6">
+                               
+                    </div>
+                </div>
+                <table class="table e-comptes-synthese-2" style="width: 100%;">
+                    <thead>
+                        <tr>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <tr class="table-product-line send-tc-submit" data-xiti-f1="3" data-tc-name="accueil::renvoi compte dav|accueil||mon espace|renvoi compte dav" data-href="page2.html">
+                           
+                                <div class="cat-dav cat-1 active">
+                                    <div class="pull-right">
+                                        <div class="e-comptes-synthese-num">
+                                            <span style="color: green; font-size: 16px">+ 370 000,00&nbsp;€</span>
+                                        </div>
+                                    </div>
+                                    <div class="e-comptes-synthese-title">
+                                        <span style="font-size: 14px">Compte bancaire n°<br> <b> 12690385509005</b></span>
+                                    </div>
+                                    <div class="e-comptes-synthese-text">
+                                        
+                                            
+                                            <span>  Mlle.</span>
+                                            <span>SOFIA ROSSO </span> <br>
+                                             
+                                            
+
+                                        
+                                        
+
+                                    
+                               
+                            <div class="col-sm-4">
+                                <div class="m-more-card-btn">
+                                    <a class="btn btn-primary btn-squared" href="Opérations.html">Accedez a vos opérations</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+ </div>
+                            </div>
+ </div>
+
+               
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+                    <div class="jahia-footer hidden-print">
+        <div>
+        
+        <div>
+            <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client/auto-promotion/toutes-rubriques.html #autopromo-produits-hors-DAV-bas'></div>
+                
+        </div>
+        
+                
+                
+                
+        
+        
+       </div> 
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ep-layout">
+    <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client.html #div-ep-footer-sub-container'></div>
+</div>
+</div>
+<br><br><br><br><br><br><br><br><br>.
+
+    <script>
+        var xiti_pagename = 'synthese';
+    </script>   
+
+<div></div>
+
+    <script>
+        /*<![CDATA[*/
+            tc_vars = {};
+            tc_vars["env_work"] = 'prod';
+            tc_vars["user_id"] = 'A4816E5072630022E0530AC7A1172373';
+            tc_vars["user_logged"] = 2;
+        /*]]>*/
+    </script>
+    <!--[if lt IE 9]>
+    <script th:src="${application.staticRoot + '/js/ec-core-ie9-libs.js'}" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="https://static.bforbank.com/js/ec-core-libs.js"></script>
+    <!--<![endif]-->
+    <noscript><iframe src="//redirect331.tagcommander.com/utils/noscript.php?id=1&amp;mode=iframe" width="1" height="1" rel="noindex,nofollow"></iframe></noscript>
+
+<div>
+    <script>
+        // variable iframe doit être assignée a true pour chacunes des pages ou l'on retrouve une iframe
+        var iframe = null;
+        if(!iframe){
+            var tc_bank = '';
+            loadjsfile(tc_bank);
+        }
+    </script>
+</div>
+
+    
+    <script src="https://static.bforbank.com/js/ec-chart.js"></script>
+    <script>
+        /*<![CDATA[*/
+        var charData = null;
+        var da = [];
+        var colors = [];
+
+        for (var i = 0; i < charData.length; i++) {
+            da[i] = {
+                label: charData[i].shortLabel,
+                data: charData[i].partduCompte,
+                solde: charData[i].solde
+            }
+            colors[i] = charData[i].color;
+        }
+        $("#ec-compte-synthese").length && $.plot($("#ec-compte-synthese"), da, {
+            series: {
+                pie: {
+                    innerRadius: 0.5,
+                    show: true
+                }
+            },
+            colors: colors,
+            grid: {
+                hoverable: true,
+                clickable: false
+            },
+            tooltip: true,
+            tooltipOpts: {
+                content: "%s: %p.0%"
+            }
+        });
+
+        /**
+         * Gestion du hover sur les sections du donut
+         * pour mettre à jour les données dans le donut
+         */
+        $("#ec-compte-synthese").bind("plothover", function(event, pos, item) {
+            
+            $('#flotTip').hide();
+            $('#flotTip').attr('style', 'display:none !important');
+            $('.flotTip').hide();
+            $('.flotTip').attr('style', 'display:none !important');
+            if (item && item.datapoint) {
+                var category = item.seriesIndex + 1;
+                var percent = item.datapoint[1][0][1];
+                var value = item.series.solde;
+                $('.chart-legend-title').html(item.series.label);
+                $('.chart-legend-percent').html(formatPercentage(percent));
+                $('.chart-legend-number').html(formatCurrency(value));
+                $('[class^="cat-"]').removeClass('active');
+                $('.cat-' + category).addClass('active');
+            }
+        });
+        
+        /**
+         * Gère l'affichage de la popin de la page de synthese
+         */
+        //lit un cookie
+        var readCookie = function readCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+
+        //si la popin synthese existe
+        if ($("#popinSynthese").length) {
+            //si le cookie popin synthese est absent et que la popin a du contenu
+            if (readCookie("AUTOPROMO_POPIN") == "" && $("#popinSyntheseBody").text().trim()!="") {
+                //afficher la modal
+                $('#popinSynthese').modal('show');
+                //creer le cookie
+                var d = new Date();
+                d.setTime(d.getTime() + Number($("#cookieTimeout").val()));
+                var expires = "expires=" + d.toUTCString();
+                document.cookie = "AUTOPROMO_POPIN=true; " + expires;
+                //fin si le cookie popin synthese est absent
+            }
+            //fin si la popin synthese existe
+        }
+
+        /*]]>*/
+    </script>
+
+
+
+
+
+    </div> 
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ep-layout">
+    <div class='ajax-jahia' data-src='https://www.bforbank.com/contenus-unitaires/espace-client.html #div-ep-footer-sub-container'></div>
+</div>
+</div>
+
+    <script>
+        var xiti_pagename = 'consultation/operations';
+    </script>
+
+<div></div>
+
+    <script>
+        /*<![CDATA[*/
+            tc_vars = {};
+            tc_vars["env_work"] = 'prod';
+            tc_vars["user_id"] = 'A4816E5072630022E0530AC7A1172373';
+            tc_vars["user_logged"] = 2;
+        /*]]>*/
+    </script>
+    <!--[if lt IE 9]>
+    <script th:src="${application.staticRoot + '/js/ec-core-ie9-libs.js'}" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="https://static.bforbank.com/js/ec-core-libs.js"></script>
+    <!--<![endif]-->
+    <noscript><iframe src="//redirect331.tagcommander.com/utils/noscript.php?id=1&amp;mode=iframe" width="1" height="1" rel="noindex,nofollow"></iframe></noscript>
+
+<div>
+    
+</div>
+
+    
+    
+    <script src="https://static.bforbank.com/js/ec-core-libs.js"></script>
+
+</body>
+</html>
